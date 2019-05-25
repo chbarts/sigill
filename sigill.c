@@ -16,7 +16,7 @@ void sighandler(int signo, siginfo_t * si, void *data)
     code = (unsigned char *) rip;
 
     printf("%02hhx %02hhx\n", code[0], code[1]);
-    exit(EXIT_SUCCESS);
+    uc->uc_mcontext.gregs[REG_RIP] += 2;
 }
 
 int main(void)
