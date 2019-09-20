@@ -28,7 +28,7 @@ int main(void)
     sigaction(SIGILL, &sa, &osa);
 
     printf("Before\n");
-    asm("ud1\n");
+    asm("ud2\n");
     printf("After\n");
 
     exit(EXIT_SUCCESS);
